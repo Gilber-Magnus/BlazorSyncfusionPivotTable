@@ -1,7 +1,7 @@
 ﻿@page "/"
 
 
-<SfPivotView TValue="ProductDetails" Height="700px" Width = "1400px" >
+<SfPivotView TValue="ProductDetails" Height="700px" Width = "1400px" ShowFieldList="true" ShowGroupingBar="true" >
     <PivotViewDataSourceSettings DataSource="@PivotTabledataSource">
         
         <PivotViewColumns>
@@ -11,7 +11,7 @@
 
         <PivotViewRows>
             <PivotViewRow Name="Country"></PivotViewRow>
-            <PivotViewRow Name="Products"></PivotViewRow>
+            
         </PivotViewRows>
 
         <PivotViewValues>
@@ -19,6 +19,12 @@
             <PivotViewValue Name="Amount" Caption="Sold Amount"></PivotViewValue>
         </PivotViewValues>
 
+        <PivotViewFormatSettings>
+            <PivotViewFormatSetting Name="Amount" Format="$####.00"></PivotViewFormatSetting>
+        </PivotViewFormatSettings>
+        <PivotViewFilters>
+            <PivotViewFilter Name="Products"></PivotViewFilter>
+        </PivotViewFilters>
     </PivotViewDataSourceSettings>
 
 </SfPivotView>
